@@ -1,0 +1,63 @@
+<div class="wrapper-md">
+    <div class="panel panel-default">
+        <div class="panel-heading font-bold">Video Link</div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="ui-image-container">
+                        <div class="ui-image">
+                            <div class="ui-image-content"
+                                 style="background-image: url(http://img.youtube.com/vi/{{ video.link }}/0.jpg);">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <form role="form">
+                        <div class="form-group">
+                            <input ng-model="video.link"
+                                   type="text"
+                                   class="form-control"
+                                   placeholder="Paste Video Link Here"
+                                   ng-change="videoPaste()"
+                                     />
+                        </div>
+                        <div class="form-group"  ng-show="video.link">
+                            <label>Go to video</label>
+                            <a href="http://www.youtube.com/v={{ video.link }}">
+                                http://www.youtube.com/watch?v={{ video.link }}
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pull-right">
+        <a data-ng-href="#/tours"
+                class="btn btn-sm btn-info">Cancel</a>
+        <button data-ng-click="save()"
+                type="submit"
+                class="btn btn-sm btn-primary"
+                ng-show="video.link && video.name">Save</button>
+    </div>
+
+    <tabset class="tab-container">
+        <tab heading="Basic Info">
+            <form role="form">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input ng-model="video.name" type="text" class="form-control" placeholder="Video Name" />
+                </div>
+                <div class="form-group">
+                    <label>Introduction</label>
+                    <textarea data-ckeditor="editorOptions" ng-model="video.description"></textarea>
+                </div>
+            </form>
+        </tab>
+        <tab heading="Videos" ng-show="video.link">
+            <youtube-video video-id="video.link"></youtube-video>
+        </tab>
+    </tabset>
+</div>

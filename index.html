@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html data-ng-app="VideoApplication">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Video Page</title>
+    <link rel="stylesheet" href="Styles/main.css" />
+</head>
+<body>
+<section id="navigation">
+    <div class="slider" ng-controller="SliderController">
+        <div class="item" ng-repeat="video in videos">
+            <img src="http://img.youtube.com/vi/{{ video.link }}/0.jpg" />
+        </div>
+    </div>
+</section>
+<section id="slider">
+
+</section>
+<section id="body">
+
+</section>
+<section id="footer">
+
+</section>
+
+<script src="administrator/vendor/jquery/jquery.min.js"></script>
+<script src="administrator/vendor/jquery/bootstrap.js"></script>
+
+<!-- Angular import -->
+<script type="text/javascript" src="./Scripts/AngularJS/angular.js"></script>
+<script type="text/javascript" src="./Scripts/AngularJS/angular-route.js"></script>
+<script type="text/javascript" src="./Scripts/AngularJS/angular-sanitize.js"></script>
+<script type="text/javascript" src="./Scripts/AngularJS/angular-resource.js"></script>
+
+<script type="text/javascript" src="./Scripts/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="./Scripts/ng-ckeditor/ng-ckeditor.js"></script>
+
+<script src="./administrator/vendor/angular/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="./Scripts/flow.js/dist/flow.js"></script>
+<script src="./Scripts/ng-flow/dist/ng-flow.js"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="./Scripts/AngularJS/angular-youtube-embed.min.js"></script>
+
+<script type="text/javascript" src="./Scripts/Services/Factories.js"></script>
+<script type="text/javascript" src="./Scripts/HomePage/Controllers.js"></script>
+<script type="text/javascript" src="./Scripts/HomePage/Application.js"></script>
+</body>
+</html>
