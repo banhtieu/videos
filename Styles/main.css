@@ -1,12 +1,9 @@
 .slider {
-    background-color: #000;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-
-    .item {
-        position: absolute;
-        top: 0px;
-        width: 100px;
-    }
-}
+  background-color: #000;
+  height: 300px;
+  overflow: hidden;
+  position: relative; }
+  .slider .item {
+    position: absolute;
+    top: 0px;
+    width: 100px; }
