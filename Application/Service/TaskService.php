@@ -23,7 +23,32 @@ class TaskService {
      * @get(/)
      */
     public function getAll() {
-        $query = $this->collection->buildQuery();
+        $collection = Repository::get("Task");
+        $query = $collection->buildQuery();
+
         return $query->findAll();
     }
+
+    /**
+     * @param $name string #path
+     * @return string
+     * @get(/hello/:name)
+     */
+    public function hello($name){
+        return "Hello, $name!";
+    }
+
+    /**
+     * @get(/add)
+     */
+    public function  add(){
+        $collection = Repository::get("Task");
+
+        $task = new Task();
+        $task->id = 0;
+        $task->name = "Sample Task";
+        $task->description = "Create a sample task";
+        $collection->save($task);
+    }
+
 }

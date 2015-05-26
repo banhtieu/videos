@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todoApp">
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Styles/Semantic-UI/semantic.css" />
+    <script type="text/javascript" src="../Scripts/AngularJS/angular.js"></script>
+    <script type="text/javascript" src="../Scripts/AngularJS/angular-route.js"></script>
+    <script type="text/javascript" src="../Scripts/AngularJS/angular-sanitize.js"></script>
+    <script type="text/javascript" src="../Scripts/AngularJS/angular-resource.js"></script>
+    <script src="../Scripts/todo/task.js"></script>
     <title></title>
 </head>
-<body>
+<body >
 <div>
     <h1>Input Your Task</h1>
 </div>
@@ -20,10 +25,10 @@
 <div class="ui button">
 
 </div>
-<div class="allTask">
-    <div class="task">
-        <p class="title">Go Shopping</p>
-        <p class="description">Buy some new dresses</p>
+<div class="allTask" ng-controller="taskList as allTasks">
+    <div class="task" ng-repeat="item in allTasks.tasks">
+        <p class="title">{{ item.name }}</p>
+        <p class="description">{{ item.description }}</p>
     </div>
 </div>
 </body>
