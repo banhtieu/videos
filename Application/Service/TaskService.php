@@ -1,16 +1,16 @@
 <?php
 
-/**
- * Service for task processing...
- * @base(/tasks)
- **/
-
 namespace Application\Service;
 
-use Application\Model\Video;
+use Application\Model\Task;
 use Core\Database\Collection;
 use Core\Database\Repository;
 
+/**
+ * Class TaskService
+ * @package Application\Service
+ * @base(/tasks)
+ */
 class TaskService {
 
     /**
