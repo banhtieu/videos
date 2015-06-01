@@ -6,6 +6,18 @@ angular.module("todoApp", []).controller("taskList", ["$scope", "$http", functio
 
     $http.get("/videos/tasks").success(function(data){
        $scope.tasks = data;
+
+    });
+
+
+}]);
+
+angular.module("todoApp", []).controller("taskData", ["$scope", "$http", function($scope, $http){
+    $http.post("/videos/tasks", $scope.todoItem).success(function(data){
+        //$scope.tasks = todoItem;
+        $scope.message = "Save successful";
+        //console.debug("data is " + data.name);
+        // console.debug("description is " + data.description);
     });
 }]);
 

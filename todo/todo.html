@@ -11,24 +11,26 @@
     <title></title>
 </head>
 <body >
-<div>
-    <h1>Input Your Task</h1>
-</div>
-<div>
-    <lable>Name</lable>
-    <input type="text" placeholder="Task">
-</div>
-<div>
-    <label>Description</label>
-    <textarea></textarea>
-</div>
-<div class="ui button">
+<div ng-controller="taskData">
+    <div >
+        <h1>Input Your Task</h1>
+    </div>
+    <div>
+        <lable>Name</lable>
+        <input type="text" placeholder="Task" ng-model="todoItem.name">
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea ng-model="todoItem.description"></textarea>
+    </div>
+    <div class="ui button">
 
+    </div>
 </div>
 <div class="allTask" ng-controller="taskList">
     <div class="task" ng-repeat="item in tasks">
-        <p class="title">{{ item[1] }}</p>
-        <p class="description">{{ item[2] }}</p>
+        <p class="title">{{ item.name }}</p>
+        <p class="description">{{ item.description }}</p>
     </div>
 </div>
 </body>
