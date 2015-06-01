@@ -51,4 +51,16 @@ class TaskService {
         $collection->save($task);
     }
 
+    /**
+     * save itemTodo
+     * @post(/)
+     * @param $task the Task to save #body
+     * @return the saved task
+     */
+    public function save($task){
+        $collection = Repository::get("Task");
+        $collection->save($task);
+        return $task;
+    }
+
 }

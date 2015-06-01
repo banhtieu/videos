@@ -23,15 +23,25 @@
         <label>Description</label>
         <textarea ng-model="todoItem.description"></textarea>
     </div>
-    <div class="ui button">
+    <div class="ui button" ng-click="addButtonClicked()">
 
     </div>
 </div>
 <div class="allTask" ng-controller="taskList">
-    <div class="task" ng-repeat="item in tasks">
-        <p class="title">{{ item.name }}</p>
-        <p class="description">{{ item.description }}</p>
-    </div>
+    <table class="ui very basic table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in tasks" >
+            <td>{{ item.name }}</td>
+            <td>{{ item.description }}</td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

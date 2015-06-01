@@ -2,7 +2,8 @@
  * Created by phuongjolly on 5/26/15.
  */
 
-angular.module("todoApp", []).controller("taskList", ["$scope", "$http", function($scope, $http){
+var application = angular.module("todoApp", []);
+application.controller("taskList", ["$scope", "$http", function($scope, $http){
 
     $http.get("/videos/tasks").success(function(data){
        $scope.tasks = data;
@@ -12,13 +13,15 @@ angular.module("todoApp", []).controller("taskList", ["$scope", "$http", functio
 
 }]);
 
-angular.module("todoApp", []).controller("taskData", ["$scope", "$http", function($scope, $http){
-    $http.post("/videos/tasks", $scope.todoItem).success(function(data){
-        //$scope.tasks = todoItem;
-        $scope.message = "Save successful";
-        //console.debug("data is " + data.name);
-        // console.debug("description is " + data.description);
-    });
+application.controller("taskData", ["$scope", "$http", function($scope, $http){
+    $scope.addButtonClicked = function(){
+        $http.post("/videos/tasks", $scope.todoItem).success(function(data){
+            $scope.tasks = data;
+            $scope.message = "Save successful";
+            //console.debug("data is " + data);
+            //console.debug("description is " + $scope.todoItem.description);
+        });
+    }
 }]);
 
 /*angular.module('todoApp', []).controller('taskList', function(){
