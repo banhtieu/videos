@@ -2,8 +2,14 @@
  * Created by phuongjolly on 5/26/15.
  */
 
+angular.module("todoApp", []).controller("taskList", ["$scope", "$http", function($scope, $http){
 
-angular.module('todoApp', []).controller('taskList', function(){
+    $http.get("/videos/tasks").success(function(data){
+       $scope.tasks = data;
+    });
+}]);
+
+/*angular.module('todoApp', []).controller('taskList', function(){
     var controller = this;
 
     controller.tasks = [
@@ -19,4 +25,4 @@ angular.module('todoApp', []).controller('taskList', function(){
         }
 
     ];
-});
+});*/

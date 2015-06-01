@@ -25,10 +25,10 @@
 <div class="ui button">
 
 </div>
-<div class="allTask" ng-controller="taskList as allTasks">
-    <div class="task" ng-repeat="item in allTasks.tasks">
-        <p class="title">{{ item.name }}</p>
-        <p class="description">{{ item.description }}</p>
+<div class="allTask" ng-controller="taskList">
+    <div class="task" ng-repeat="item in tasks">
+        <p class="title">{{ item[1] }}</p>
+        <p class="description">{{ item[2] }}</p>
     </div>
 </div>
 </body>
