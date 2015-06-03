@@ -7,3 +7,17 @@
     position: absolute;
     top: 0px;
     width: 100px; }
+
+#allTask .ui.very.basic.table {
+  width: 600px; }
+  #allTask .ui.very.basic.table td, #allTask .ui.very.basic.table th {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: justify; }
+  #allTask .ui.very.basic.table td:first-child {
+    width: 5%; }
+
+.addTask {
+  padding-top: 20px;
+  padding-left: 20px;
+  width: 600px; }

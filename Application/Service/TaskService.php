@@ -41,7 +41,7 @@ class TaskService {
     /**
      * @get(/add)
      */
-    public function  add(){
+    public function add(){
         $collection = Repository::get("Task");
 
         $task = new Task();

@@ -2,7 +2,7 @@
  * Created by phuongjolly on 5/26/15.
  */
 
-var application = angular.module("todoApp", []);
+var application = angular.module("todoApp", ["ngRoute"]);
 application.controller("taskList", ["$scope", "$http", function($scope, $http){
 
     $http.get("/videos/tasks").success(function(data){
@@ -21,8 +21,25 @@ application.controller("taskData", ["$scope", "$http", function($scope, $http){
             //console.debug("data is " + data);
             //console.debug("description is " + $scope.todoItem.description);
         });
+
     }
 }]);
+
+application.config(['$routeProvider',
+    function($routeProvider) {
+        $routeProvider.
+            when('/tasks', {
+                templateUrl: 'list.html',
+                controller: 'taskList'
+            }).
+            when('/add', {
+                templateUrl: 'edit.html',
+                controller: 'taskData'
+            }).
+            otherwise({
+                redirectTo: '/tasks'
+            });
+    }]);
 
 /*angular.module('todoApp', []).controller('taskList', function(){
     var controller = this;

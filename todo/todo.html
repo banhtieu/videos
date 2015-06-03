@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../Styles/Semantic-UI/semantic.css" />
+    <link rel="stylesheet" href="../Styles/main.min.css" />
     <script type="text/javascript" src="../Scripts/AngularJS/angular.js"></script>
     <script type="text/javascript" src="../Scripts/AngularJS/angular-route.js"></script>
     <script type="text/javascript" src="../Scripts/AngularJS/angular-sanitize.js"></script>
@@ -11,37 +12,9 @@
     <title></title>
 </head>
 <body >
-<div ng-controller="taskData">
-    <div >
-        <h1>Input Your Task</h1>
-    </div>
-    <div>
-        <lable>Name</lable>
-        <input type="text" placeholder="Task" ng-model="todoItem.name">
-    </div>
-    <div>
-        <label>Description</label>
-        <textarea ng-model="todoItem.description"></textarea>
-    </div>
-    <div class="ui button" ng-click="addButtonClicked()">
+<div data-ng-view="">
 
-    </div>
 </div>
-<div class="allTask" ng-controller="taskList">
-    <table class="ui very basic table">
-        <thead>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr ng-repeat="item in tasks" >
-            <td>{{ item.name }}</td>
-            <td>{{ item.description }}</td>
-        </tr>
-        </tbody>
-    </table>
-</div>
+
 </body>
 </html>
